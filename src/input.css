@@ -1,1 +1,47 @@
 @import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", "sans-serif";
+  --font-roboto: "Roboto", "sans-serif";
+}
+
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-montserrat);
+  }
+  span,
+  p,
+  a {
+    font-family: var(--font-roboto);
+  }
+  .no-scroll {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+  }
+  .no-scroll::-webkit-scrollbar {
+    display: none; /* Older Safari and Chromium */
+  }
+  .my-container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 90rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 115rem;
+    }
+  }
+}
