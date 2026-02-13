@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
-    <title>Gymshark product variant section</title>
+    <title>Gymshark home page clone</title>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,92 +14,464 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header
-      class="w-full h-17.5 border bg-black flex justify-center items-center"
+    <!-- Announcement bar -->
+    <section
+      id="announcement"
+      class="w-full overflow-hidden bg-light-gray px-4 border border-light-gray"
     >
-      <nav
-        class="my-container mx-auto flex justify-between items-center px-4 lg:px-0"
+      <div
+        id="announcement-container"
+        class="container mx-auto flex flex-col justify-center items-center relative h-12.5"
       >
-        <!-- Menu navigation -->
-        <ul class="hidden">
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">Kids</a></li>
-        </ul>
-        <!-- Logo -->
-        <div>
-          <a href="#" class="text-4xl uppercase font-bold text-white">Velora</a>
+        <p
+          class="absolute text-black font-normal opacity-0 translate-y-6 transition-all duration-700 text-center text-xs hover:underline announcement"
+        >
+          <a href="#">Free standard shipping on orders over $75 🚚 </a>
+        </p>
+        <p
+          class="absolute text-black font-normal opacity-0 translate-y-6 transition-all duration-700 text-center text-xs hover:underline announcement"
+        >
+          <a href="#"
+            >Get 10% off your first order when you sign up to our emails ✉️</a
+          >
+        </p>
+        <p
+          class="absolute text-black font-normal opacity-0 translate-y-6 transition-all duration-700 text-center text-xs hover:underline announcement"
+        >
+          <a href="#">15% Student Discount ‍🎓</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Header -->
+    <section id="header" class="w-full relative bg-white">
+      <header
+        class="hidden w-full h-fit flex justify-center items-center lg:h-19"
+      >
+        <div class="my-container mx-auto px-4 lg:px-0">
+          <div
+            class="w-full flex justify-between py-5 items-center flex-wrap lg:flex-nowrap"
+          >
+            <div class="w-1/3">
+              <!-- Hamburger menu -->
+              <span id="hamburger-menu" class="block lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  stroke-width="2.5"
+                  stroke="#1b1b1b"
+                  fill="none"
+                  class="duration-300 transform transition-all"
+                  style="width: 24px; height: 24px"
+                >
+                  <path
+                    d="M7.68 32h48.64M7.68 15.97h48.64M7.68 48.03h48.64"
+                  ></path>
+                </svg>
+              </span>
+              <!-- Menu navigation -->
+              <ul class="hidden lg:flex justify-start gap-6 text-sm">
+                <li
+                  class="nav-desktop main-menu-tab"
+                  data-target-id="content-women"
+                >
+                  <a href="#">Women</a>
+                </li>
+                <li
+                  class="nav-desktop main-menu-tab"
+                  data-target-id="content-men"
+                >
+                  <a href="#">Men</a>
+                </li>
+                <li
+                  class="nav-desktop main-menu-tab"
+                  data-target-id="content-accessories"
+                >
+                  <a href="#">Accessories</a>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="w-1/3 flex justify-center items-center">
+              <img src="./src/images/gym.avif" alt="Logo" />
+            </a>
+            <div class="w-1/3 flex justify-end">
+              <div class="flex justify-end items-center gap-4 lg:gap-6">
+                <!-- Search -->
+                <button
+                  class="hidden lg:flex justify-start items-center cursor-pointer rounded-full bg-white gap-2 2xl:py-3 2xl:px-4 2xl:w-62.5 2xl:bg-light-gray"
+                >
+                  <span class="block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 64 64"
+                      stroke-width="2.5"
+                      stroke="#1b1b1b"
+                      fill="none"
+                      class="duration-300 transform transition-all"
+                      style="width: 24px; height: 24px"
+                    >
+                      <circle cx="27.31" cy="25.74" r="18.1"></circle>
+                      <path d="M39.58 39.04L56.14 57"></path>
+                    </svg>
+                  </span>
+                  <span class="hidden text-xs text-black opacity-35 2xl:block"
+                    >What are you looking for today...</span
+                  >
+                </button>
+                <div
+                  class="flex justify-between items-center w-16 lg:w-fit lg:gap-4 xl:gap-6"
+                >
+                  <!-- Heart icon -->
+                  <span class="hidden lg:block cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 64 64"
+                      stroke-width="2.5"
+                      stroke="#1b1b1b"
+                      fill="none"
+                      class="duration-300 transform transition-all"
+                      style="width: 24px; height: 24px"
+                    >
+                      <path
+                        d="M9.06 25c-1.38-7.7 3.72-14.37 11.67-15 7-.55 10.47 7.93 11.17 9.55a.13.13 0 00.25 0c3.25-8.91 9.17-9.29 11.25-9.5 5.6-.6 13.11 3.73 11.6 13.82-2.16 14-23.12 29.81-23.12 29.81S11.79 40.05 9.06 25z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <!-- User icon -->
+                  <span class="cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 64 64"
+                      stroke-width="2.5"
+                      stroke="#1b1b1b"
+                      fill="none"
+                      class="duration-300 transform transition-all"
+                      style="width: 24px; height: 24px"
+                    >
+                      <circle cx="32" cy="18.14" r="11.14"></circle>
+                      <path
+                        d="M54.55 56.85A22.55 22.55 0 0032 34.3h0A22.55 22.55 0 009.45 56.85z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <!-- cart icon -->
+                  <span class="cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 64 64"
+                      stroke-width="2.5"
+                      stroke="#1b1b1b"
+                      fill="none"
+                      class="duration-300 transform transition-all"
+                      style="width: 24px; height: 24px"
+                    >
+                      <path
+                        d="M50.44 55.76H13.56a1.84 1.84 0 01-1.83-2l3.28-33a1.85 1.85 0 011.83-1.66h30.32A1.85 1.85 0 0149 20.71l3.28 33a1.84 1.84 0 01-1.84 2.05z"
+                      ></path>
+                      <path
+                        d="M22.27 24.27V18a9.73 9.73 0 1119.46 0v6.3"
+                      ></path>
+                      <circle cx="22.27" cy="24.27" r="2"></circle>
+                      <circle cx="41.73" cy="24.27" r="2"></circle>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full mt-6 lg:mt-0 lg:hidden">
+              <!-- Search -->
+              <button
+                class="w-full h-13.5 lg:hidden flex justify-start items-center cursor-pointer rounded-full px-4 bg-light-gray gap-2"
+              >
+                <span class="block">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    stroke-width="2.5"
+                    stroke="#1b1b1b"
+                    fill="none"
+                    class="duration-300 transform transition-all"
+                    style="width: 20px; height: 20px"
+                  >
+                    <circle cx="27.31" cy="25.74" r="18.1"></circle>
+                    <path d="M39.58 39.04L56.14 57"></path>
+                  </svg>
+                </span>
+                <span class="block text-sm text-black opacity-35"
+                  >What are you looking for today...</span
+                >
+              </button>
+            </div>
+          </div>
         </div>
-        <!-- Search, account, cart -->
-        <div class="flex justify-center items-center gap-4 lg:gap-6">
-          <!-- Search -->
-          <div class="justify-center items-center gap-2 hidden lg:flex">
-            <span class="text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-search-icon lucide-search"
+      </header>
+      <!-- Mega menu -->
+      <!-- z-10 fixed top-0 left-0 translate-x-full overflow-y-auto duration-700 ease-in-out lg:h-fit lg:top-28 lg:translate-x-0 lg:translate-y-20 lg:opacity-0 lg:pointer-events-none -->
+      <div id="mega-menu" class="w-full h-screen">
+        <div
+          class="container mx-auto px-4 py-8 w-full flex flex-col items-center justify-center gap-4 lg:py-16"
+        >
+          <div
+            class="w-full flex flex-col items-center justify-center gap-8 lg:hidden"
+          >
+            <div class="w-full flex justify-between items-center">
+              <!-- Close menu -->
+              <span id="close-menu" class="block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  stroke-width="4.5"
+                  stroke="#000000"
+                  fill="none"
+                  class="duration-300 transform transition-all"
+                  style="width: 24px; height: 24px"
+                >
+                  <path d="M8.06 8.06l47.35 47.88M55.94 8.06L8.59 55.94"></path>
+                </svg>
+              </span>
+              <!-- heart icon -->
+              <span class="block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  stroke-width="4.5"
+                  stroke="#000000"
+                  fill="none"
+                  class="duration-300 transform transition-all"
+                  style="width: 24px; height: 24px"
+                >
+                  <path
+                    d="M9.06 25c-1.38-7.7 3.72-14.37 11.67-15 7-.55 10.47 7.93 11.17 9.55a.13.13 0 00.25 0c3.25-8.91 9.17-9.29 11.25-9.5 5.6-.6 13.11 3.73 11.6 13.82-2.16 14-23.12 29.81-23.12 29.81S11.79 40.05 9.06 25z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="w-full lg:hidden">
+              <!-- Search -->
+              <button
+                class="w-full h-13.5 lg:hidden flex justify-start items-center cursor-pointer rounded-full px-4 bg-light-gray gap-2"
               >
-                <path d="m21 21-4.34-4.34" />
-                <circle cx="11" cy="11" r="8" />
-              </svg>
-            </span>
-            <span class="text-white">Search</span>
+                <span class="block">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    stroke-width="2.5"
+                    stroke="#1b1b1b"
+                    fill="none"
+                    class="duration-300 transform transition-all"
+                    style="width: 20px; height: 20px"
+                  >
+                    <circle cx="27.31" cy="25.74" r="18.1"></circle>
+                    <path d="M39.58 39.04L56.14 57"></path>
+                  </svg>
+                </span>
+                <span class="block text-sm text-black opacity-35"
+                  >What are you looking for today...</span
+                >
+              </button>
+            </div>
           </div>
-          <!-- Account -->
-          <div>
-            <span class="text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-user-icon lucide-user"
+          <!-- Menu -->
+          <ul
+            class="w-full border-b-2 border-b-light-gray flex justify-start items-center gap-4 lg:hidden"
+          >
+            <li
+              data-target-id="content-women"
+              class="mobile-menu-tab border-b-2 py-2 font-normal cursor-pointer text-black text-sm"
+            >
+              Women
+            </li>
+            <li
+              data-target-id="content-men"
+              class="mobile-menu-tab py-2 font-normal cursor-pointer text-black text-sm"
+            >
+              Men
+            </li>
+            <li
+              data-target-id="content-accessories"
+              class="mobile-menu-tab py-2 font-normal cursor-pointer text-black text-sm"
+            >
+              Accessories
+            </li>
+          </ul>
+          <!-- Image menu -->
+          <div class="w-full flex overflow-x-auto">
+            <div class="relative w-60 h-23.5 border">
+              <img
+                class="rounded-md block w-full h-hull object-center object-cover"
+                src="./src/images/menu1.avif"
+                alt=""
+              />
+              <h6
+                class="uppercase absolute bottom-4 left-4 text-base text-white font-semibold"
               >
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </span>
+                Everyday seamless
+              </h6>
+            </div>
+            <div class="relative w-60 h-23.5">
+              <img
+                class="rounded-md block w-full h-hull object-center object-cover"
+                src="./src/images/menu2.avif"
+                alt=""
+              />
+              <h6
+                class="uppercase absolute bottom-4 left-4 text-base text-white font-semibold"
+              >
+                New lift seamless
+              </h6>
+            </div>
           </div>
-          <!-- cart -->
-          <div class="">
-            <span class="text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+          <!-- Submenu -->
+          <div
+            class="w-full flex flex-col-reverse items-center justify-center gap-8 xl:flex-row xl:items-stretch"
+          >
+            <div class="w-full flex flex-col gap-4 xl:w-2/3">
+              <div
+                id="content"
+                class="mega-menu-content-panel w-full flex flex-col justify-center items-start gap-4 lg:flex-row"
               >
-                <circle cx="8" cy="21" r="1" />
-                <circle cx="19" cy="21" r="1" />
-                <path
-                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                />
-              </svg>
-            </span>
+                <div
+                  class="w-full flex flex-col justify-center items-start gap-4"
+                >
+                  <div
+                    class="subHeadings w-full flex justify-between items-center"
+                  >
+                    <h6
+                      class="text-sm text-black font-bold lg:uppercase lg:text-[#666666]"
+                    >
+                      text
+                    </h6>
+                    <span class="subHeadingsIcons block lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 64 64"
+                        stroke-width="4.5"
+                        stroke="#000000"
+                        fill="none"
+                        class="duration-300 transform transition-all"
+                        style="width: 16px; height: 16px"
+                      >
+                        <path d="M18.86 57.47l25.26-26.63L18.86 6.58"></path>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <div
+                    class="subHeadingsBodys hidden flex-col text-[#6e6e6e] gap-2 text-sm lg:flex"
+                  >
+                    <a href="#">text</a>
+                  </div>
+                </div>
+
+                <p class="text-[#6e6e6e] text-sm">
+                  No sub-menu items found for.
+                </p>
+              </div>
+            </div>
+            <!-- Image on large screen -->
+            <div
+              id="mega-menu-images"
+              class="w-full xl:w-1/3 xl:flex xl:flex-col xl:justify-start xl:items-start xl:gap-4"
+            >
+              <div id="images" class="mega-menu-images-panel hidden w-full">
+                <div class="hidden xl:block w-full">
+                  <h6
+                    class="text-sm text-black font-bold lg:uppercase lg:text-[#666666]"
+                  >
+                    Featured
+                  </h6>
+                </div>
+                <div
+                  class="w-full snap-x snap-mandatory flex overflow-scroll justify-start items-center gap-2 xl:snap-none xl:overflow-hidden xl:flex-col xl:items-start"
+                >
+                  <div
+                    class="border border-[#6e6e6e61] rounded w-[288px] h-[180px] sm:w-[608px] sm:h-[380px] md:w-[758px] md:h-[473px] xl:w-[388px] xl:h-[220px] relative snap-start grow"
+                  >
+                    <a href="" class="block w-full h-full">
+                      <div
+                        class="w-[288px] h-[180px] rounded sm:w-[608px] sm:h-[380px] md:w-[758px] md:h-[473px] xl:w-[388px] xl:h-[220px]"
+                      ></div>
+                      <span
+                        class="uppercase absolute bottom-2 left-2 text-xs sm:text-sm bg-white/80 px-2 py-1 rounded"
+                      >
+                        product title
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    class="border border-[#6e6e6e61] rounded w-[288px] h-[180px] sm:w-[608px] sm:h-[380px] md:w-[758px] md:h-[473px] xl:w-[388px] xl:h-[220px] relative snap-start grow"
+                  >
+                    <div
+                      class="w-[288px] h-[180px] rounded sm:w-[608px] sm:h-[380px] md:w-[758px] md:h-[473px] xl:w-[388px] xl:h-[220px]"
+                    >
+                      image placeholder
+                    </div>
+                    <span
+                      class="uppercase absolute bottom-2 left-2 text-xs sm:text-sm"
+                      >Cosy luxe</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <!-- <section
+      id="hero"
+      class="w-full h-fit"
+    >
+      <div class="w-full h-screen lg:h-[75vh] overflow-hidden relative">
+        
+        <div class="w-full h-full">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/EngW7tLk6R8?si=GpthpJY7t6_UszVN&amp;controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="absolute inset-4 flex items-end">
+          <div class="container mx-auto px-4 py-5">
+            <div
+              class="flex flex-col justify-center items-start gap-3 bg-white px-4 py-8 max-w-xl"
+            >
+              <h1 class="text-lg font-bold lg:text-2xl uppercase">
+                New in: Cosy luxe x soft sculpt
+              </h1>
+              <p class="text-sm font-normal">
+                All turning heads in burgundy, this season's hottest hue.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  class="text-sm font-medium px-6 py-3 border rounded-full cursor-pointer"
+                >
+                  <a class="uppercase">Shop new in</a>
+                </button>
+                <button
+                  class="text-sm font-medium px-6 py-3 border rounded-full cursor-pointer"
+                >
+                  <a class="uppercase">burgundy sets</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- Section product -->
     <section class="w-full my-44">
@@ -3616,6 +3988,8 @@
       </div>
     </section>
     <!-- script -->
-    <script src="./src/js/main.js"></script>
+    <script src="./src/js/announcement.js"></script>
+    <script src="./src/js/header.js"></script>
+    <!-- <script src="./src/js/product-variant.js"></script> -->
   </body>
 </html>
