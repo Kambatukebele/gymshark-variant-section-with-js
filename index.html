@@ -45,9 +45,7 @@
 
     <!-- Header -->
     <section id="header" class="w-full relative bg-white">
-      <header
-        class="hidden w-full h-fit flex justify-center items-center lg:h-19"
-      >
+      <header class="w-full h-fit flex justify-center items-center lg:h-19">
         <div class="my-container mx-auto px-4 lg:px-0">
           <div
             class="w-full flex justify-between py-5 items-center flex-wrap lg:flex-nowrap"
@@ -58,8 +56,8 @@
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 64 64"
-                  stroke-width="2.5"
-                  stroke="#1b1b1b"
+                  stroke-width="4.5"
+                  stroke="#000000"
                   fill="none"
                   class="duration-300 transform transition-all"
                   style="width: 24px; height: 24px"
@@ -205,12 +203,15 @@
           </div>
         </div>
       </header>
-      <!-- Mega menu -->
-      <!-- z-10 fixed top-0 left-0 translate-x-full overflow-y-auto duration-700 ease-in-out lg:h-fit lg:top-28 lg:translate-x-0 lg:translate-y-20 lg:opacity-0 lg:pointer-events-none -->
-      <div id="mega-menu" class="w-full h-screen">
+      <!-- hidden menu on small device and  Mega menu on large screen -->
+      <div
+        id="mega-menu"
+        class="w-full h-screen bg-white z-10 fixed top-0 left-0 translate-x-full overflow-y-auto duration-700 ease-in-out lg:h-fit lg:top-28 lg:translate-x-0 lg:translate-y-20 lg:opacity-0 lg:pointer-events-none"
+      >
         <div
-          class="container mx-auto px-4 py-8 w-full flex flex-col items-center justify-center gap-4 lg:py-16"
+          class="my-container mx-auto px-4 py-8 w-full flex flex-col items-center justify-center gap-4 lg:py-16"
         >
+          <!-- close menu, search icon and icon heart -->
           <div
             class="w-full flex flex-col items-center justify-center gap-8 lg:hidden"
           >
@@ -271,7 +272,7 @@
               </button>
             </div>
           </div>
-          <!-- Menu -->
+          <!-- Menu title -->
           <ul
             class="w-full border-b-2 border-b-light-gray flex justify-start items-center gap-4 lg:hidden"
           >
@@ -294,9 +295,11 @@
               Accessories
             </li>
           </ul>
-          <!-- Image menu -->
-          <div class="w-full flex overflow-x-auto">
-            <div class="relative w-60 h-23.5 border">
+          <!-- hidden Image menu on mobile-->
+          <div class="w-full whitespace-nowrap overflow-x-auto no-scroll">
+            <div
+              class="relative inline-block rounded-md w-[80%] shrink-0 min-h-33.75"
+            >
               <img
                 class="rounded-md block w-full h-hull object-center object-cover"
                 src="./src/images/menu1.avif"
@@ -305,10 +308,12 @@
               <h6
                 class="uppercase absolute bottom-4 left-4 text-base text-white font-semibold"
               >
-                Everyday seamless
+                Everyday Seamless
               </h6>
             </div>
-            <div class="relative w-60 h-23.5">
+            <div
+              class="relative inline-block rounded-md w-[80%] shrink-0 min-h-33.75"
+            >
               <img
                 class="rounded-md block w-full h-hull object-center object-cover"
                 src="./src/images/menu2.avif"
@@ -321,27 +326,28 @@
               </h6>
             </div>
           </div>
-          <!-- Submenu -->
+          <!-- Submenu level 1 based on selected menu title -->
           <div
-            class="w-full flex flex-col-reverse items-center justify-center gap-8 xl:flex-row xl:items-stretch"
+            class="w-full mb-10 flex flex-col-reverse items-center justify-center gap-8 xl:flex-row xl:items-stretch"
           >
             <div class="w-full flex flex-col gap-4 xl:w-2/3">
               <div
                 id="content"
-                class="mega-menu-content-panel w-full flex flex-col justify-center items-start gap-4 lg:flex-row"
+                class="w-full flex flex-col justify-center items-start gap-4 lg:flex-row"
               >
+                <!-- To loop card on mobile, and display normal on large screen -->
                 <div
                   class="w-full flex flex-col justify-center items-start gap-4"
                 >
                   <div
-                    class="subHeadings w-full flex justify-between items-center"
+                    class="w-full h-14 border-b-2 border-light-gray flex justify-between items-center"
                   >
                     <h6
-                      class="text-sm text-black font-bold lg:uppercase lg:text-[#666666]"
+                      class="text-sm text-black font-normal capitalize lg:uppercase"
                     >
-                      text
+                      trending
                     </h6>
-                    <span class="subHeadingsIcons block lg:hidden">
+                    <span class="block lg:hidden">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 64 64"
@@ -355,23 +361,65 @@
                       </svg>
                     </span>
                   </div>
-
+                  <!-- submenu level 2 block -->
                   <div
-                    class="subHeadingsBodys hidden flex-col text-[#6e6e6e] gap-2 text-sm lg:flex"
+                    class="hidden w-full bg-green-900 h-screen flex flex-col gap-8 px-4 py-6"
                   >
-                    <a href="#">text</a>
+                    <!-- submenu level 2  Title and icon -->
+                    <div class="flex justify-start items-center gap-4">
+                      <!-- Arrow left -->
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 64 64"
+                          stroke-width="4.5"
+                          stroke="#000000"
+                          fill="none"
+                          class="duration-300 transform transition-all"
+                          style="width: 16px; height: 16px"
+                        >
+                          <path d="M45.15 57.47L19.88 30.84 45.15 6.58"></path>
+                        </svg>
+                      </span>
+                      <h6 class="text-sm text-black font-normal capitalize">
+                        Trending
+                      </h6>
+                    </div>
+                    <!-- submenu level 2   -->
+                    <div class="w-full">
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                      <a
+                        class="w-full h-11 flex justify-start items-center text-sm font-normal text-black border-b border-light-gray"
+                        >New arrivals</a
+                      >
+                    </div>
                   </div>
                 </div>
-
-                <p class="text-[#6e6e6e] text-sm">
-                  No sub-menu items found for.
-                </p>
               </div>
             </div>
             <!-- Image on large screen -->
             <div
               id="mega-menu-images"
-              class="w-full xl:w-1/3 xl:flex xl:flex-col xl:justify-start xl:items-start xl:gap-4"
+              class="hidden w-full xl:w-1/3 xl:flex xl:flex-col xl:justify-start xl:items-start xl:gap-4"
             >
               <div id="images" class="mega-menu-images-panel hidden w-full">
                 <div class="hidden xl:block w-full">
@@ -414,6 +462,31 @@
                 </div>
               </div>
             </div>
+          </div>
+          <!-- Extra information -->
+          <div
+            class="flex flex-col justify-start items-start gap-5 w-full lg:hidden"
+          >
+            <a
+              href="#"
+              class="text-sm capitalize text-black font-normal opacity-60 block"
+              >Accessibility statement</a
+            >
+            <a
+              href="#"
+              class="text-sm capitalize text-black font-normal opacity-60 block"
+              >Help</a
+            >
+            <a
+              href="#"
+              class="text-sm capitalize text-black font-normal opacity-60 block"
+              >Email Sign Up</a
+            >
+            <a
+              href="#"
+              class="text-sm capitalize text-black font-normal opacity-60 block"
+              >Blog</a
+            >
           </div>
         </div>
       </div>
