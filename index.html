@@ -493,61 +493,54 @@
     </section>
 
     <!-- Hero -->
-    <!-- <section
-      id="hero"
-      class="w-full h-fit"
-    >
-      <div class="w-full h-screen lg:h-[75vh] overflow-hidden relative">
-        
-        <div class="w-full h-full">
-          <iframe
-            class="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/embed/EngW7tLk6R8?si=GpthpJY7t6_UszVN&amp;controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+    <section id="hero" class="w-full h-fit">
+      <div class="w-full h-120 lg:h-[75vh] overflow-hidden relative">
+        <!-- video -->
+        <div class="w-full h-120 lg:h-[75vh]">
+          <video
+            class="w-full h-full object-center object-cover"
+            autoplay
+            muted
+            loop
+          >
+            <source
+              src="./src/video/SEASONAL_LIFTING_FEMALE_8x3_BANNER_EVERYDAY_SEAMLESS.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
-        <div class="absolute inset-4 flex items-end">
-          <div class="container mx-auto px-4 py-5">
+        <!-- Title and description and button -->
+        <div class="absolute inset-4 flex items-end pb-4">
+          <div class="my-container mx-auto lg:px-0">
             <div
-              class="flex flex-col justify-center items-start gap-3 bg-white px-4 py-8 max-w-xl"
+              class="flex flex-col justify-center items-start gap-3 max-w-xl"
             >
-              <h1 class="text-lg font-bold lg:text-2xl uppercase">
-                New in: Cosy luxe x soft sculpt
+              <h1 class="text-lg text-white font-bold lg:text-2xl uppercase">
+                New in: red
               </h1>
-              <p class="text-sm font-normal">
-                All turning heads in burgundy, this season's hottest hue.
+              <p class="text-sm font-normal text-white">
+                Our bestselling styles, in trending shades of red.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="flex justify-start items-center flex-wrap gap-8">
                 <button
-                  class="text-sm font-medium px-6 py-3 border rounded-full cursor-pointer"
+                  class="text-sm font-normal cursor-pointer border-b-2 border-white pb-1"
                 >
-                  <a class="uppercase">Shop new in</a>
+                  <a class="capitalize text-white">Shop new in</a>
                 </button>
                 <button
-                  class="text-sm font-medium px-6 py-3 border rounded-full cursor-pointer"
+                  class="text-sm font-normal cursor-pointer border-b-2 border-white pb-1"
                 >
-                  <a class="uppercase">burgundy sets</a>
+                  <a class="capitalize text-white">burgundy sets</a>
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Section product -->
-    <section class="w-full my-44">
+    <section class="w-full">
       <div class="my-container mx-auto py-6 lg:py-12 px-4">
         <div class="w-full flex flex-col gap-4">
           <!-- titles and buttons -->
@@ -4063,6 +4056,6 @@
     <!-- script -->
     <script src="./src/js/announcement.js"></script>
     <script src="./src/js/header.js"></script>
-    <!-- <script src="./src/js/product-variant.js"></script> -->
+    <script src="./src/js/product-variant.js"></script>
   </body>
 </html>
