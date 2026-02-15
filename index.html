@@ -8251,7 +8251,7 @@
 
     <!-- Footer -->
     <footer class="w-full">
-      <div class="my-container mx-auto px-4 py-6">
+      <div class="my-container mx-auto px-4 py-6 lg:py-12">
         <div class="w-full">
           <!-- Back to top -->
           <div
@@ -8273,20 +8273,24 @@
             <span class="block text-sm font-bold text-black">Back to top</span>
           </div>
           <!-- Upper Footer -->
-          <div>
+          <div
+            class="w-full flex flex-col gap-4 lg:flex-row lg:justify-between"
+          >
             <!-- Upper footer left -->
             <div
-              class="w-1/2 flex flex-col gap-2 justify-start lg:flex-row lg:items-start"
+              class="w-full lg:w-[35%] flex flex-col gap-2 justify-start lg:flex-row lg:items-start"
             >
               <!-- Footer card -->
               <div
                 class="w-full h-fit pb-4 border-b border-gray-300 lg:border-none"
               >
                 <!-- Title -->
-                <div class="w-full flex justify-between items-center h-14">
+                <div
+                  class="w-full flex justify-between items-center h-14 footer-title"
+                >
                   <h6 class="uppercase text-sm font-bold">Help</h6>
                   <div class="lg:hidden">
-                    <span class="block w-5 h-5">
+                    <span class="block w-5 h-5 footer-plus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8309,7 +8313,7 @@
                         </g>
                       </svg>
                     </span>
-                    <span class="w-5 h-5 hidden">
+                    <span class="w-5 h-5 hidden footer-minus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8335,7 +8339,9 @@
                   </div>
                 </div>
                 <!-- footer card links -->
-                <div class="w-full flex flex-col h-fit gap-2">
+                <div
+                  class="w-full hidden flex-col h-fit gap-2 footer-links lg:flex"
+                >
                   <a href="#" class="block text-sm text-gray-600 font-normal"
                     >FAQ</a
                   >
@@ -8361,10 +8367,12 @@
                 class="w-full h-fit pb-4 border-b border-gray-300 lg:border-none"
               >
                 <!-- Title -->
-                <div class="w-full flex justify-between items-center h-14">
+                <div
+                  class="w-full flex justify-between items-center h-14 footer-title"
+                >
                   <h6 class="uppercase text-sm font-bold">My account</h6>
                   <div class="lg:hidden">
-                    <span class="block w-5 h-5">
+                    <span class="block w-5 h-5 footer-plus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8387,7 +8395,7 @@
                         </g>
                       </svg>
                     </span>
-                    <span class="w-5 h-5 hidden">
+                    <span class="w-5 h-5 hidden footer-minus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8413,7 +8421,9 @@
                   </div>
                 </div>
                 <!-- footer card links -->
-                <div class="w-full flex flex-col h-fit gap-2">
+                <div
+                  class="w-full hidden flex-col h-fit gap-2 footer-links lg:flex"
+                >
                   <a href="#" class="block text-sm text-gray-600 font-normal"
                     >Login</a
                   >
@@ -8427,10 +8437,12 @@
                 class="w-full h-fit pb-4 border-b border-gray-300 lg:border-none"
               >
                 <!-- Title -->
-                <div class="w-full flex justify-between items-center h-14">
+                <div
+                  class="w-full flex justify-between items-center h-14 footer-title"
+                >
                   <h6 class="uppercase text-sm font-bold">Pages</h6>
                   <div class="lg:hidden">
-                    <span class="block w-5 h-5">
+                    <span class="block w-5 h-5 footer-plus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8453,7 +8465,7 @@
                         </g>
                       </svg>
                     </span>
-                    <span class="w-5 h-5 hidden">
+                    <span class="w-5 h-5 hidden footer-minus">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -8479,7 +8491,9 @@
                   </div>
                 </div>
                 <!-- footer card links -->
-                <div class="w-full flex flex-col h-fit gap-2">
+                <div
+                  class="w-full hidden flex-col h-fit gap-2 footer-links lg:flex"
+                >
                   <a href="#" class="block text-sm text-gray-600 font-normal"
                     >Stores</a
                   >
@@ -8517,9 +8531,46 @@
               </div>
             </div>
             <!-- Upper footer right -->
-            <div>
-              <!-- image text cart -->
-              <div></div>
+            <div class="w-full flex flex-col gap-4 lg:w-[55%] xl:w-[35%]">
+              <!-- Title -->
+              <h6 class="uppercase font-bold text-sm text-black">
+                More about gymshark
+              </h6>
+
+              <div class="w-full whitespace-nowrap overflow-x-auto no-scroll">
+                <!-- image text card -->
+                <div class="inline-block">
+                  <img
+                    class="w-[175px] h-[96px] object-center object-cover"
+                    src="./src/images/footer-1.avif"
+                  />
+                  <div class="bg-gray py-3 px-2">
+                    <h6 class="uppercase font-bold text-black text-xs">Blog</h6>
+                  </div>
+                </div>
+                <div class="inline-block">
+                  <img
+                    class="w-[175px] h-[96px] object-center object-cover"
+                    src="./src/images/footer-2.avif"
+                  />
+                  <div class="bg-gray py-3 px-2">
+                    <h6 class="uppercase font-bold text-black text-xs">
+                      15% student discount
+                    </h6>
+                  </div>
+                </div>
+                <div class="inline-block">
+                  <img
+                    class="w-[175px] h-[96px] object-center object-cover"
+                    src="./src/images/footer-3.avif"
+                  />
+                  <div class="bg-gray py-3 px-2">
+                    <h6 class="uppercase font-bold text-black text-xs">
+                      Email sign up
+                    </h6>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -8530,5 +8581,6 @@
     <script src="./src/js/announcement.js"></script>
     <script src="./src/js/header.js"></script>
     <script src="./src/js/product-variant.js"></script>
+    <script src="./src/js/footer.js"></script>
   </body>
 </html>
