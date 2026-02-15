@@ -271,9 +271,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-44 {
-    margin-block: calc(var(--spacing) * 44);
-  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -288,6 +285,9 @@
   }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -340,20 +340,11 @@
   .h-30 {
     height: calc(var(--spacing) * 30);
   }
-  .h-44 {
-    height: calc(var(--spacing) * 44);
-  }
-  .h-96 {
-    height: calc(var(--spacing) * 96);
-  }
   .h-120 {
     height: calc(var(--spacing) * 120);
   }
   .h-\[180px\] {
     height: 180px;
-  }
-  .h-\[480px\] {
-    height: 480px;
   }
   .h-\[calc\(541px-120px\)\] {
     height: calc(541px - 120px);
@@ -478,6 +469,9 @@
   .snap-start {
     scroll-snap-align: start;
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -531,6 +525,9 @@
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
   }
   .overflow-hidden {
     overflow: hidden;
@@ -591,6 +588,9 @@
   .border-b-light-gray {
     border-bottom-color: var(--color-light-gray);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
@@ -629,9 +629,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -712,6 +709,9 @@
   }
   .text-gray-950 {
     color: var(--color-gray-950);
+  }
+  .text-light-gray {
+    color: var(--color-light-gray);
   }
   .text-white {
     color: var(--color-white);
@@ -812,6 +812,11 @@
   .md\:w-\[758px\] {
     @media (width >= 48rem) {
       width: 758px;
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .lg\:pointer-events-none {
@@ -924,11 +929,6 @@
   .lg\:py-16 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 16);
-    }
-  }
-  .lg\:pb-0 {
-    @media (width >= 64rem) {
-      padding-bottom: calc(var(--spacing) * 0);
     }
   }
   .lg\:text-2xl {
@@ -1073,7 +1073,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-montserrat);
   }
-  span, p, a {
+  span, p, button, a {
     font-family: var(--font-roboto);
   }
   .no-scroll {
