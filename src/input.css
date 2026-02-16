@@ -21,6 +21,7 @@
   }
   span,
   p,
+  div,
   button,
   a {
     font-family: var(--font-roboto);
